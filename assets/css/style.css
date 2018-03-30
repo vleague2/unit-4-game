@@ -1,0 +1,16 @@
+h1, h5 {
+    font-family: 'Mina', sans-serif;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.jumbotron {
+    background-color: #fcf0e4;
+    border: 1px solid #cccccc;
+}
+
+.card {
+    background-color: #f7f7f7;
+}

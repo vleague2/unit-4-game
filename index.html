@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pusheen Collector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Mina|Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="assets/javascript/game.js"></script>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid pt-4 pb-4">
+        <div class="container">
+          <h1 class="display-4 text-center">Pusheen Collector</h1>
+        </div>
+      </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"> Instructions</h5>
+
+                        <p class="card-text text-center">
+                            You will be given a random number at the start of the game. Your goal is to match your total to the random number. 
+                            <br><br>
+                            Clicking on a Pusheen will give you points, but each Pusheen contains a different number of points -- and these point values will be randomly generated at the start of the game. You won't the values until you click on each Pusheen.
+                            <br><br>
+                            You must reach the random number through a combination of Pusheen Points. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">
+                            Random Number:
+                        </h5>
+                        <h5 class="text-center" id="random-number">#</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">
+                            Your Total:
+                        </h5>
+                        <h5 class="text-center" id="your-total">0</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <img id="pusheen1" src="assets/images/pusheen-bacon.gif">
+            </div>
+        </div>
+
+
+
+    </div>
+
+    </div>
+</body>
+</html>
