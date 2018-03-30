@@ -14,3 +14,7 @@ body {
 .card {
     background-color: #f7f7f7;
 }
+
+img {
+    border: 1.5px solid #dfdfdf;
+}

@@ -10,14 +10,13 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Mina|Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="assets/javascript/game.js"></script>
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid pt-4 pb-4">
         <div class="container">
           <h1 class="display-4 text-center">Pusheen Collector</h1>
         </div>
-      </div>
+    </div>
 
     <div class="container">
         <div class="row justify-content-center">
@@ -37,9 +36,9 @@
                 </div>
             </div>
         </div>
-    <div>
+
         <div class="row justify-content-center mt-3">
-            <div class="col-md-4">
+            <div class="col-md-4 mr-5">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-center">
@@ -50,7 +49,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 ml-5">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-center">
@@ -62,16 +61,39 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-4">
             <div class="col-md-3">
-                <img id="pusheen1" src="assets/images/pusheen-bacon.gif">
+                <img id="pusheen1" src="assets/images/pusheen-bacon.gif" width="220px">
+            </div>
+
+            <div class="col-md-3">
+                <img id="pusheen2" src="assets/images/pusheen-burrito.gif" width="220px">
+            </div>
+
+            <div class="col-md-3">
+                <img id="pusheen3" src="assets/images/pusheen-donut.gif" width="220px">
+            </div>
+
+            <div class="col-md-3">
+                <img id="pusheen4" src="assets/images/pusheen-ramen.gif" width="220px">
             </div>
         </div>
 
-
-
+        <div class="row justify-content-center mt-4 mb-5">
+            <div class="col-md-9">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Wins: <span id="win-ct">0</span> Losses: <span id="loss-ct">0</span>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    </div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+
 </body>
 </html>
