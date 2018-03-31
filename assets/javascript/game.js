@@ -1,7 +1,7 @@
 // VARIABLES
 
 // Num variable: yourTotal, which is tied to display h5 #your-total
-var yourTotal;
+var yourTotal = 0;
 
 // Num variable: winCounter set to 0, which is tied to display span #win-ct
 var winCounter = 0;
@@ -30,17 +30,17 @@ var pusheen4Value = 0;
 
 // generate & display randomNumber function
 function genRandomNumber() {
-    randomNumber = (Math.floor(Math.random() * 100) + 1);
+    randomNumber = (Math.floor(Math.random() * 101) + 19);
     $("#random-number").html(randomNumber);
 }
 
 // generate pusheen values function
     // a number between X and Y 
 function genPusheen() {
-    pusheen1Value = (Math.floor(Math.random() * 10) + 1);
-    pusheen2Value = (Math.floor(Math.random() * 10) + 1);
-    pusheen3Value = (Math.floor(Math.random() * 10) + 1);
-    pusheen4Value = (Math.floor(Math.random() * 10) + 1);
+    pusheen1Value = (Math.floor(Math.random() * 11) + 1);
+    pusheen2Value = (Math.floor(Math.random() * 11) + 1);
+    pusheen3Value = (Math.floor(Math.random() * 11) + 1);
+    pusheen4Value = (Math.floor(Math.random() * 11) + 1);
 }
 
 // Restart game function
@@ -50,11 +50,11 @@ function genPusheen() {
 function restart() {
     yourTotal = 0;
     $("#your-total").html(yourTotal);
+    $("#win-ct").html(winCounter);
+    $("#loss-ct").html(lossCounter);
     genRandomNumber();
     genPusheen();
 }
-
-
 
 // GAME
 
@@ -63,46 +63,50 @@ function restart() {
 // Game displays randomNumber
 $(document).ready(function(){
 
-restart();
+    restart();
 
 // If yourTotal < randomNumber
     // .Click function to listen for clicks on the Pusheens
     // The clicked Pusheen's value gets pushed to yourTotal
-if (randomNumber > yourTotal) {
-    $("#pusheen1").click(function(){
-        yourTotal += pusheen1Value;
-        $("#your-total").html(yourTotal);
-    });
 
-    $("#pusheen2").click(function() {
-        yourTotal += pusheen2Value;
-        $("#your-total").html(yourTotal);
-    });
+    if (randomNumber > yourTotal) {
+        $("#pusheen1").click(function(){
+            yourTotal = yourTotal += pusheen1Value;
+            $("#your-total").html(yourTotal);
+        });
 
-    $("#pusheen3").click(function() {
-        yourTotal += pusheen3Value;
-        $("#your-total").html(yourTotal);
-    });
+        $("#pusheen2").click(function() {
+            yourTotal = yourTotal += pusheen2Value;
+            $("#your-total").html(yourTotal);
+        });
 
-    $("#pusheen4").click(function() {
-        yourTotal += pusheen4Value;
-        $("#your-total").html(yourTotal);
-    });   
-}
+        $("#pusheen3").click(function() {
+            yourTotal = yourTotal += pusheen3Value;
+            $("#your-total").html(yourTotal);
+        });
 
-// If yourTotal === randomNumber
-    // Add to winCounter
-    // Restart game
-else if (yourTotal === randomNumber) {
-    winCounter++;
-    restart();
-}
+        $("#pusheen4").click(function() {
+            yourTotal = yourTotal += pusheen4Value;
+            $("#your-total").html(yourTotal);
+        });     
+    }
 
-// If yourTotal > randomNumber
-    // Add to lossCounter
-    // Restart game
-else if (yourTotal > randomNumber) {
-    lossCounter++;
-    restart();
-}
+// // If yourTotal === randomNumber
+//     // Add to winCounter
+//     // Restart game
+    else if (randomNumber === yourTotal) {
+        console.log("equal");
+        winCounter++;
+        restart();
+    }
+
+// // If yourTotal > randomNumber
+//     // Add to lossCounter
+//     // Restart game
+    else {
+        console.log("greater");
+        lossCounter++;
+        restart();
+    }
+
 })
