@@ -65,48 +65,77 @@ $(document).ready(function(){
 
     restart();
 
-// If yourTotal < randomNumber
-    // .Click function to listen for clicks on the Pusheens
-    // The clicked Pusheen's value gets pushed to yourTotal
+// .Click functions to listen for clicks on the Pusheens
+// The clicked Pusheen's value gets pushed to yourTotal
+// If yourTotal reaches randomNumber, the game restarts and adds a win
+// If yourTotal becomes more than randomNumber, the game restarts and adds a loss
 
-    if (randomNumber > yourTotal) {
-        $("#pusheen1").click(function(){
+    $("#pusheen1").click(function(){
+        if (randomNumber > yourTotal) {
             yourTotal = yourTotal += pusheen1Value;
             $("#your-total").html(yourTotal);
-        });
+        }
 
-        $("#pusheen2").click(function() {
+        else if (randomNumber === yourTotal) {
+            winCounter++;
+            restart();
+        }
+
+        else {
+            lossCounter++;
+            restart();
+        }
+    })
+
+    $("#pusheen2").click(function(){
+        if (randomNumber > yourTotal) {
             yourTotal = yourTotal += pusheen2Value;
             $("#your-total").html(yourTotal);
-        });
+        }
 
-        $("#pusheen3").click(function() {
+        else if (randomNumber === yourTotal) {
+            winCounter++;
+            restart();
+        }
+
+        else {
+            lossCounter++;
+            restart();
+        }
+    })
+
+    $("#pusheen3").click(function(){
+        if (randomNumber > yourTotal) {
             yourTotal = yourTotal += pusheen3Value;
             $("#your-total").html(yourTotal);
-        });
+        }
 
-        $("#pusheen4").click(function() {
+        else if (randomNumber === yourTotal) {
+            winCounter++;
+            restart();
+        }
+
+        else {
+            lossCounter++;
+            restart();
+        }
+    })
+
+    $("#pusheen4").click(function(){
+        if (randomNumber > yourTotal) {
             yourTotal = yourTotal += pusheen4Value;
             $("#your-total").html(yourTotal);
-        });     
-    }
+        }
 
-// // If yourTotal === randomNumber
-//     // Add to winCounter
-//     // Restart game
-    else if (randomNumber === yourTotal) {
-        console.log("equal");
-        winCounter++;
-        restart();
-    }
+        else if (randomNumber === yourTotal) {
+            winCounter++;
+            restart();
+        }
 
-// // If yourTotal > randomNumber
-//     // Add to lossCounter
-//     // Restart game
-    else {
-        console.log("greater");
-        lossCounter++;
-        restart();
-    }
+        else {
+            lossCounter++;
+            restart();
+        }
+    })
 
 })
