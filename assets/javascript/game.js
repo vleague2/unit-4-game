@@ -1,27 +1,27 @@
 // VARIABLES
 
-// Num variable: yourTotal, which is tied to display h5 #your-total
+// Num variable: yourTotal, which will be tied to display h5 #your-total
 var yourTotal = 0;
 
-// Num variable: winCounter set to 0, which is tied to display span #win-ct
+// Num variable: winCounter set to 0, which will be tied to display span #win-ct
 var winCounter = 0;
 
-//Num variable: lossCounter set to 0, which is tied to display span #loss-ct
+//Num variable: lossCounter set to 0, which will be tied to display span #loss-ct
 var lossCounter = 0;
 
-// Num variable: randomNumber, which is tied to display h5 #random-number
+// Num variable: randomNumber, which will be tied to display h5 #random-number
 var randomNumber = 0;
 
-// Num variable: pusheen1Value, which is tied to img #pusheen-1
+// Num variable: pusheen1Value, which will be tied to img #pusheen-1
 var pusheen1Value = 0;
 
-//Num variable: pusheen2Value, which is tied to img #pusheen-2
+//Num variable: pusheen2Value, which will be tied to img #pusheen-2
 var pusheen2Value = 0;
 
-// Num variable: pusheen3Value, which is tied to img #pusheen-3
+// Num variable: pusheen3Value, which will be tied to img #pusheen-3
 var pusheen3Value = 0;
 
-// Num variable: pusheen4Value, which is tied to img #pusheen-4
+// Num variable: pusheen4Value, which will be tied to img #pusheen-4
 var pusheen4Value = 0;
 
 
@@ -29,13 +29,14 @@ var pusheen4Value = 0;
 // FUNCTIONS
 
 // generate & display randomNumber function
+    // A number between 19 and 120
 function genRandomNumber() {
     randomNumber = (Math.floor(Math.random() * 101) + 19);
     $("#random-number").html(randomNumber);
 }
 
 // generate pusheen values function
-    // a number between X and Y 
+    // a number between 1 and 12
 function genPusheen() {
     pusheen1Value = (Math.floor(Math.random() * 11) + 1);
     pusheen2Value = (Math.floor(Math.random() * 11) + 1);
@@ -43,8 +44,28 @@ function genPusheen() {
     pusheen4Value = (Math.floor(Math.random() * 11) + 1);
 }
 
+// Check if conditions are met to call the restart
+    // If so, add to the appropriate win and loss counter, and call the restart function
+function needRestart() {
+    if (randomNumber === yourTotal) {
+        winCounter++;
+        restart();
+    }
+
+    else if (randomNumber < yourTotal) {
+        lossCounter++;
+        restart();
+    }
+}
+
+// Update the display with the new total
+function writeTotal() {
+    $("#your-total").html(yourTotal);
+}
+
 // Restart game function
     // Empty yourTotal
+    // Write new values to display
     // call genRandomNumber function
     // call genPusheen function
 function restart() {
@@ -56,13 +77,15 @@ function restart() {
     genPusheen();
 }
 
+
 // GAME
 
-// Game generates randomNumber
-// Game generates values for Pusheens
-// Game displays randomNumber
+// Make sure document is loaded!
 $(document).ready(function(){
 
+    // Game generates randomNumber
+    // Game generates values for Pusheens
+    // Game displays randomNumber
     restart();
 
 // .Click functions to listen for clicks on the Pusheens
@@ -71,71 +94,35 @@ $(document).ready(function(){
 // If yourTotal becomes more than randomNumber, the game restarts and adds a loss
 
     $("#pusheen1").click(function(){
+
         if (randomNumber > yourTotal) {
             yourTotal = yourTotal += pusheen1Value;
-            $("#your-total").html(yourTotal);
-        }
-
-        else if (randomNumber === yourTotal) {
-            winCounter++;
-            restart();
-        }
-
-        else {
-            lossCounter++;
-            restart();
+            writeTotal();
+            needRestart();
         }
     })
 
     $("#pusheen2").click(function(){
         if (randomNumber > yourTotal) {
             yourTotal = yourTotal += pusheen2Value;
-            $("#your-total").html(yourTotal);
-        }
-
-        else if (randomNumber === yourTotal) {
-            winCounter++;
-            restart();
-        }
-
-        else {
-            lossCounter++;
-            restart();
+            writeTotal();
+            needRestart();
         }
     })
 
     $("#pusheen3").click(function(){
         if (randomNumber > yourTotal) {
             yourTotal = yourTotal += pusheen3Value;
-            $("#your-total").html(yourTotal);
-        }
-
-        else if (randomNumber === yourTotal) {
-            winCounter++;
-            restart();
-        }
-
-        else {
-            lossCounter++;
-            restart();
+            writeTotal();
+            needRestart();
         }
     })
 
     $("#pusheen4").click(function(){
         if (randomNumber > yourTotal) {
             yourTotal = yourTotal += pusheen4Value;
-            $("#your-total").html(yourTotal);
-        }
-
-        else if (randomNumber === yourTotal) {
-            winCounter++;
-            restart();
-        }
-
-        else {
-            lossCounter++;
-            restart();
+            writeTotal();
+            needRestart();
         }
     })
-
 })

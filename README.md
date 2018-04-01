@@ -12,5 +12,5 @@ How the game works:
 4. If your score becomes greater than the random value, the loss counter increases and the game resets the values for the total score, random number, and random Pusheen values
 
 Limitations:
-1. The If/Else loop isn't working, for some reason
+1. To make the .click functions DRYer, I had tried to assign values to the IMGs, but for some reason JQuery could not pull any values. This is why the .click functions are a bit repetitive.
 

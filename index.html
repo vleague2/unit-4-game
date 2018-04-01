@@ -3,24 +3,43 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Webpage title -->
     <title>Pusheen Collector</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Reset stylesheet for cross-browser compatibility -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+
+    <!-- Bootstrap stylesheet link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Mina|Source+Sans+Pro" rel="stylesheet">
+
+    <!-- Custom CSS stylesheet -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
+
 <body>
+
+    <!-- Page title display container, class pulled from Bootstrap -->
     <div class="jumbotron jumbotron-fluid pt-4 pb-4">
         <div class="container">
           <h1 class="display-4 text-center">Pusheen Collector</h1>
         </div>
     </div>
 
+    <!-- Container to house the grid display system -->
     <div class="container">
+
+        <!-- Top row of content, aligned center because the column width is not the full container width -->
         <div class="row justify-content-center">
-            <div class="col-md-9">
+            <div class="col-md-10">
+
+                <!-- Card from Bootstrap to hosue the content -->
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-center"> Instructions</h5>
@@ -28,7 +47,7 @@
                         <p class="card-text text-center">
                             You will be given a random number at the start of the game. Your goal is to match your total to the random number. 
                             <br><br>
-                            Clicking on a Pusheen will give you points, but each Pusheen contains a different number of points -- and these point values will be randomly generated at the start of the game. You won't the values until you click on each Pusheen.
+                            Clicking on a Pusheen will give you points, but each Pusheen contains a different number of points -- and these point values are randomly generated at the start of each game. You won't know the values until you click on each Pusheen.
                             <br><br>
                             You must reach the random number through a combination of Pusheen Points. 
                         </p>
@@ -37,54 +56,77 @@
             </div>
         </div>
 
+        <!-- Second row of content, which houses the random number and user score. also aligned center -->
         <div class="row justify-content-center mt-3">
+
+            <!-- Left column to house random number -->
             <div class="col-md-4 mr-5">
+
+                <!-- Card from Bootstrap to house the content of the random number -->
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-center">
                             Random Number:
                         </h5>
-                        <h5 class="text-center" id="random-number">#</h5>
+
+                        <!-- H5 will be hooked from Javascript and text will be displayed dynamically from Javascript -->
+                        <h5 class="text-center" id="random-number"></h5>
                     </div>
                 </div>
             </div>
 
+            <!-- Right column to house user score -->
             <div class="col-md-4 ml-5">
+
+                <!-- Card from Bootstrap to house the content -->
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-center">
                             Your Total:
                         </h5>
-                        <h5 class="text-center" id="your-total">0</h5>
+
+                        <!-- H5 will be hooked from Javascript and text will be displayed dynamically from Javascript -->
+                        <h5 class="text-center" id="your-total"></h5>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-md-3">
-                <img id="pusheen1" src="assets/images/pusheen-bacon.gif" width="220px" value="1">
+        <!-- Third row, which houses the Pusheens. aligned center -->
+        <div class="row justify-content-center mt-3" >
+
+            <!-- Leftmost Pusheen -->
+            <div class="col-md-3 text-center">
+                <img id="pusheen1" src="assets/images/pusheen-bacon.gif" width="220px">
             </div>
 
-            <div class="col-md-3">
+            <!-- Second from left Pusheen -->
+            <div class="col-md-3 text-center">
                 <img id="pusheen2" src="assets/images/pusheen-burrito.gif" width="220px" value="2">
             </div>
 
-            <div class="col-md-3">
+            <!-- Second from right Pusheen -->
+            <div class="col-md-3 text-center">
                 <img id="pusheen3" src="assets/images/pusheen-donut.gif" width="220px" value="3">
             </div>
 
-            <div class="col-md-3">
+            <!-- Rightmost Pusheen -->
+            <div class="col-md-3 text-center">
                 <img id="pusheen4" src="assets/images/pusheen-ramen.gif" width="220px" value="4">
             </div>
         </div>
 
-        <div class="row justify-content-center mt-4 mb-5">
+        <!-- Bottom row, which houses the win and loss counts. aligned center -->
+        <div class="row justify-content-center mt-3 mb-5">
             <div class="col-md-9">
+
+                <!-- Card from Bootstrap to house the content -->
                 <div class="card text-center">
                     <div class="card-body">
+
+                        <!-- Both spans will be hooked from Javascript and have content displayed dynamically -->
                         <h5 class="card-title">
-                            Wins: <span id="win-ct">0</span> Losses: <span id="loss-ct">0</span>
+                            Wins: <span id="win-ct"></span> Losses: <span id="loss-ct"></span>
                         </h5>
                     </div>
                 </div>
@@ -92,7 +134,10 @@
         </div>
     </div>
 
+    <!-- Link to JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Link to my Javascript -->
     <script src="assets/javascript/game.js"></script>
 
 </body>
