@@ -13,4 +13,5 @@ How the game works:
 
 Limitations:
 1. To make the .click functions DRYer, I had tried to assign values to the IMGs, but for some reason JQuery could not pull any values. This is why the .click functions are a bit repetitive.
+2. It works on mobile but it's not very responsive.
 
